@@ -1,0 +1,1694 @@
+{
+	"info": {
+		"_postman_id": "fac4d32b-cfa6-49d9-8f19-ecb20a2a552d",
+		"name": "Collection for product check Ukrposhta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Addresses",
+			"item": [
+				{
+					"name": "1. Create adress Izmail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0422baa8-94bf-4d95-a2f0-8ae619d20e5a",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if(responseCode.code === 200){",
+									"    var jsd = JSON.parse(responseBody);",
+									"    pm.environment.set(\"IzmailAddressId\", jsd.id);",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"city\": \"Ізмаїл\",\r\n\t\"street\": \"Нахімова\",\r\n\t\"district\": \"\",\r\n\t\"postcode\": \"68601\",\r\n\t\"houseNumber\": \"142\",\r\n\t\"description\": \"none\",\r\n\t\"region\": \"Одеська\",\r\n\t\"apartmentNumber\": \"45\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/addresses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create adress Brovari",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0422baa8-94bf-4d95-a2f0-8ae619d20e5a",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if(responseCode.code === 200){",
+									"    var jsd = JSON.parse(responseBody);",
+									"    pm.environment.set(\"BrovaryAdressId\", jsd.id);",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"city\": \"Бровари\",\r\n\t\"street\": \"Гагаріна\",\r\n\t\"district\": \"Київський\",\r\n\t\"postcode\": \"07400\",\r\n\t\"houseNumber\": \"20\",\r\n\t\"description\": \"none\",\r\n\t\"region\": \"Київська\",\r\n\t\"apartmentNumber\": \"33\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/addresses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Create adress Brovari(latinik)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0422baa8-94bf-4d95-a2f0-8ae619d20e5a",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if(responseCode.code === 200){",
+									"    var jsd = JSON.parse(responseBody);",
+									"    pm.environment.set(\"BrovaryAdressEngId\", jsd.id);",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"city\": \"Бровари\",\r\n\t\"street\": \"Гагаріна\",\r\n\t\"district\": \"Київський\",\r\n\t\"postcode\": \"07400\",\r\n\t\"houseNumber\": \"20\",\r\n\t\"description\": \"none\",\r\n\t\"region\": \"Київська\",\r\n\t\"apartmentNumber\": \"33\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/addresses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Create address International",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad153f59-a000-411c-9943-db962b999316",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"prahaAddressId\", jsonData.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"country\" : \"CZ\",\r\n  \"city\":\"Prague\",\r\n  \"region\":\"Velkopopovice\",\r\n  \"foreignStreetHouseApartment\": \"krusovice strt 56, app 45 kjlfjkj dkjkjd kjdfkf fsgdfgfd\",\r\n  \"postcode\": \"103 00\"\r\n }\r\n"
+						},
+						"url": {
+							"raw": "{{url}}/addresses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Get Addresses by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "028165f2-46f8-418f-8501-d9c192cda9c1",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/addresses/{{IzmailAddressId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addresses",
+								"{{IzmailAddressId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "2. Clients",
+			"item": [
+				{
+					"name": "1. Create Client Company Ukr",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3ccb82f5-987e-4583-b000-97ba36056179",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"testClientUkraineCompanylUuid\", jsonData.uuid);",
+									"  ",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"ТОВ Кузька и ко\",\n    \"uniqueRegistrationNumber\": \"  002\",\n    \"addressId\": \"{{BrovaryAdressId}}\",\n    \"phoneNumber\": \"380672802273\",\n    \"phones\": [\n        {\n            \"phoneNumber\": \"  0982004113\",\n            \"main\": true,\n            \"type\": \"PERSONAL\"\n        },\n        {\n            \"phoneNumber\": \"  0504001050\",\n            \"type\": \"WORK\"\n        },\n        {\n            \"phoneNumber\": \"  0442551122\"\n        }\n    ],\n    \"email\": \"   test@test.com    \",\n    \"tin\": \"2561013807\",\n    \"edrpou\": \"20053145\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/clients?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create Client Ukr Indiv",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d37bfd5d-f114-4281-ac26-8f07a1f338b1",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"testClientUkraineIndividuallUuid\", jsonData.uuid);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Вано\",\n    \"middleName\": \"\",\n    \"lastName\": \"Петренко\",\n    \t\"addresses\": [{\n\t\t\t\"addressId\": {{BrovaryAdressId}},\n\t\t\t\"main\":true\n\t\t},\n\t\t{\n\t\t\t\"addressId\": {{BrovaryAdressEngId}}\n\t\t}\n\t],\n    \"phoneNumber\": \"380661082354\",\n    \"type\": \"INDIVIDUAL\",\n    \"resident\": true\n}"
+						},
+						"url": {
+							"raw": "{{url}}/clients?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Create Client International",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2d670a75-8ee1-4088-b63a-1f7e4a18cb97",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"testClientInternationalUuid\", jsonData.uuid);",
+									"   ",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"latinName\": \"Elon Mask\",\n    \"addresses\": [\n        {\n            \"addressId\": \"{{prahaAddressId}}\",\n            \"main\": true\n        }\n    ],\n    \"email\": \"test@test.com\",\n    \"type\": \"INDIVIDUAL\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/clients?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get Client by UUID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3e10d922-8ba3-4a3e-a1ea-9f9ab0392687",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/clients/{{testClientUkraineIndividuallUuid}}?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients",
+								"{{testClientUkraineIndividuallUuid}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Get Client by post id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"goldenRecordUuid\", jsonData.uuid);",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/clients/post-id/{{postId}}?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients",
+								"post-id",
+								"{{postId}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "3. Shipment Domestic",
+			"item": [
+				{
+					"name": "1. Create Shipment EXPRESS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1dfc364e-d5f7-4bdc-b246-7e921158a2b0",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"testShipmentUkraineUuid\", jsonData.uuid);",
+									"    postman.setEnvironmentVariable(\"testShipmentUkraineBarcode\", jsonData.barcode);",
+									"}",
+									"    ",
+									"",
+									"",
+									" ",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"EXPRESS\",\n    \"sender\": {\n        \"uuid\": \"{{testClientUkraineCompanylUuid}}\"\n    },\n    \"recipient\": {\n        \"uuid\": \"{{testClientUkraineIndividuallUuid}}\"\n    },\n    \"deliveryType\": \"W2W\",\n    \"parcels\": [\n        {\n            \"weight\": 1730,\n            \"length\": 1,\n            \"declaredPrice\": 1019\n        }\n    ],\n    \"postPay\": 1019,\n    \"paidByRecipient\": false,\n    \"postPayPaidByRecipient\": true,\n    \"description\": \"8918082926\",\n    \"fragile\": true,\n    \"sms\": false,\n    \"checkOnDelivery\": false\n}"
+						},
+						"url": {
+							"raw": "{{url}}/shipments?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create Shipment EXPRESS many parcels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1dfc364e-d5f7-4bdc-b246-7e921158a2b0",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"testShipmentUkraineWithManyParcelsUuid\", jsonData.uuid);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"EXPRESS\",\n    \"sender\": {\n        \"uuid\": \"{{testClientUkraineCompanylUuid}}\"\n    },\n    \"recipient\": {\n        \"uuid\": \"{{testClientUkraineIndividuallUuid}}\"\n    },\n    \"deliveryType\": \"W2W\",\n    \"weight\": 150,\n    \"length\": 20,\n    \"width\": 100,\n    \"height\": 100,\n    \"postPay\": 1000,\n    \"recommended\": true,\n    \"sms\": true,\n    \"paidByRecipient\": false,\n    \"description\": \"some new desc\",\n    \"parcels\": [\n        {\n            \"name\": \"Parcel\",\n            \"weight\": 10000,\n            \"length\": 170,\n            \"declaredPrice\": 1000\n        },\n        {\n            \"name\": \"Parce2\",\n            \"weight\": 500,\n            \"length\": 170,\n            \"declaredPrice\": 1000,\n            \"description\": \"description\"\n        },\n        {\n            \"name\": \"Parce3\",\n            \"weight\": 500,\n            \"length\": 170,\n            \"declaredPrice\": 1000,\n            \"description\": \"description\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/shipments?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Add new parcel in a shipment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d6dd3c41-5f89-4f35-935d-2bde097de3bc",
+								"exec": [
+									"tests[\"Status code 200\"]= responseCode.code===200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Parcel4\",\r\n\t\"weight\": 100,\r\n\t\"length\": 170\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/shipments/{{testShipmentUkraineWithManyParcelsUuid}}/parcels?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments",
+								"{{testShipmentUkraineWithManyParcelsUuid}}",
+								"parcels"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Update Shipment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e09633a6-62ac-45ea-a2ae-3bcab35b44aa",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"    ",
+									"",
+									"",
+									" ",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"parcels\": [\n        {\n            \"weight\": 2270,\n            \"length\": 45\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/shipments/{{testShipmentUkraineWithManyParcelsUuid}}?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments",
+								"{{testShipmentUkraineWithManyParcelsUuid}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get Shipment by barcode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ee2e0b15-5bd8-4bba-9906-ae3b6fd2401a",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/shipments/barcode/{{testShipmentUkraineBarcode}}?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments",
+								"barcode",
+								"{{testShipmentUkraineBarcode}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Get Shipment by uuid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "429dbcca-3841-4c38-a8a1-4e65121582fc",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f4a2db93-04ef-4747-a49a-365b9d5ce837",
+								"exec": [
+									"//39130548-f6b3-4aeb-823d-ea789a70cb57"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/shipments/{{testShipmentUkraineUuid}}?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments",
+								"{{testShipmentUkraineUuid}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "4. Shipment international",
+			"item": [
+				{
+					"name": "1. Create small bag",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "edf93163-71d4-4d4e-bd9a-25cae9da5031",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"testSmallBagShipmentUuid\", jsonData.uuid);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sender\": {\n        \"uuid\": \"{{testClientUkraineIndividuallUuid}}\"\n    },\n    \"recipient\": {\n        \"uuid\": \"{{testClientInternationalUuid}}\"\n    },\n    \"senderAddressId\":\"{{BrovaryAdressEngId}}\",\n    \"packageType\": \"SMALL_BAG\",\n    \"parcels\": [\n        {\n            \"weight\": 2000,\n            \"length\": 1,\n            \"parcelItems\": [\n                {\n                    \"name\": \"Shirt\",\n                    \"description\": \"Shirts\",\n                    \"quantity\": 4,\n                    \"value\": 50,\n                    \"weight\": 20,\n                    \"countryOfOrigin\": \"CN\"\n                }\n            ]\n        }\n    ],\n    \"international\": true,\n    \"internationalData\": {\n        \"transportType\": \"AVIA\",\n        \"categoryType\": \"DOCUMENTS\",\n        \"withDeliveryNotification\": true,\n        \"tracked\": true\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/shipments?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create letter",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a4942c3e-89b3-42b4-85a6-4a6d076dc7ae",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    pm.environment.set(\"testLetterUuid\", jsonData.uuid);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sender\": {\n        \"uuid\": \"{{testClientUkraineIndividuallUuid}}\"\n    },\n    \"recipient\": {\n        \"uuid\": \"{{testClientInternationalUuid}}\"\n    },\n    \"senderAddressId\":\"{{BrovaryAdressEngId}}\",\n    \"packageType\": \"LETTER\",\n    \"parcels\": [\n        {\n            \"weight\": 200,\n            \"length\": 1\n        }\n    ],\n    \"international\": true,\n    \"internationalData\": {\n        \"avia\": false\n    },\n    \"recommended\": true\n}"
+						},
+						"url": {
+							"raw": "{{url}}/shipments?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Checking constrains for countries",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "73e516f1-5578-45da-8727-451ea4870d41",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    var expectedCountry = \"NZ\";",
+									"    var actualCountry = jsonData.iso3166;",
+									"    tests[\"Constrains is valid Expected country is  \" + expectedCountry + \"Actua lCountry is \" + actualCountry] = actualCountry == expectedCountry;",
+									"   ",
+									"    }",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/constraints-per-countries/by-parameters?token={{apiSupportCounterPartyAdminToken}}&countryISO3166=NZ",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"constraints-per-countries",
+								"by-parameters"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								},
+								{
+									"key": "countryISO3166",
+									"value": "NZ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Delete shipment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad8a416d-b893-43c2-88ce-c9f8e5540129",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/shipments/{{testLetterUuid}}?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments",
+								"{{testLetterUuid}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "5. Shipment Group",
+			"item": [
+				{
+					"name": "1. Create Shipment Group (Express)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "685dc193-4be2-4e84-976f-cbcb2062cb0d",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"testExpressShipmentGroupUuid\", jsonData.uuid);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"Group 1\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/shipment-groups?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipment-groups"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create Shipment Group (International)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7c4d9dd-abae-4380-b7ad-6d07772be135",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"testShipmentGroupInternationalUuid\", jsonData.uuid);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"International group\",\r\n\"type\": \"INTERNATIONAL\",\r\n\"packageType\": \"SMALL_BAG\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/shipment-groups?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipment-groups"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Add shipment to SG",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cbe03f3a-f264-4a0d-b46c-c2811bd6ed23",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/shipment-groups/{{testExpressShipmentGroupUuid}}/shipments/{{testShipmentUkraineWithManyParcelsUuid}}?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipment-groups",
+								"{{testExpressShipmentGroupUuid}}",
+								"shipments",
+								"{{testShipmentUkraineWithManyParcelsUuid}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get Group from Shipment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ae1141fe-9d9d-4924-8367-827efdd6bd13",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/shipments/shipment-group/{{testShipmentUkraineWithManyParcelsUuid}}?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments",
+								"shipment-group",
+								"{{testShipmentUkraineWithManyParcelsUuid}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Get Shipments from Group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "18724686-cf34-4caf-aa7b-db5e92f01656",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/shipment-groups/{{testExpressShipmentGroupUuid}}/shipments?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipment-groups",
+								"{{testExpressShipmentGroupUuid}}",
+								"shipments"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Get Shipments  Group by Uuid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "18724686-cf34-4caf-aa7b-db5e92f01656",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/shipment-groups/{{testExpressShipmentGroupUuid}}?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipment-groups",
+								"{{testExpressShipmentGroupUuid}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "6. Forms and Documents",
+			"item": [
+				{
+					"name": "1. Get all Documents for international shipment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3d36d152-bf10-489d-bbd7-d6e3112e799f",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if (responseCode.code === 200) {",
+									"    tests[\"Content type is pdf\"] = postman.getResponseHeader(\"Content-Type\") == \"application/pdf\";",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/international/shipments/{{testSmallBagShipmentUuid}}/forms?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"international",
+								"shipments",
+								"{{testSmallBagShipmentUuid}}",
+								"forms"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get form 103",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ace8d592-bc4b-4038-984d-9924d8441766",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/shipment-groups/{{testExpressShipmentGroupUuid}}/form103?token={{apiSupportCounterPartyAdminToken}}&showSenderName=true",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipment-groups",
+								"{{testExpressShipmentGroupUuid}}",
+								"form103"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								},
+								{
+									"key": "showSenderName",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Swager docs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api-docs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-docs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get docs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/doc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"doc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Get Stickers for shipment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "16d3a931-7884-43a7-9dac-449cbc056e8c",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/shipments/{{testShipmentUkraineWithManyParcelsUuid}}/sticker?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipments",
+								"{{testShipmentUkraineWithManyParcelsUuid}}",
+								"sticker"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Get Stickers for the shipment group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4c90f952-7d33-403c-a128-83f18af4c61a",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/shipment-groups/{{testExpressShipmentGroupUuid}}/sticker?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shipment-groups",
+								"{{testExpressShipmentGroupUuid}}",
+								"sticker"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. Get Document cn 22",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "69d56dcd-e327-4ed1-9967-c6be71b6d1bd",
+								"exec": [
+									"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+									"",
+									"if (responseCode.code === 200) {",
+									"    tests[\"Content type is pdf\"] = postman.getResponseHeader(\"Content-Type\") == \"application/pdf\";",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/international/shipments/{{testSmallBagShipmentUuid}}/cn22?token={{apiSupportCounterPartyAdminToken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"international",
+								"shipments",
+								"{{testSmallBagShipmentUuid}}",
+								"cn22"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{apiSupportCounterPartyAdminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
